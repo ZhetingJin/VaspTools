@@ -72,7 +72,7 @@ if os.path.isfile('WAVECAR'):
     else:
         p           = procar()
         # The atomic contribution to each KS states
-        atomic_whts = [p.get_pw("12:20")[:,kmap,8], p.get_pw("12:20")[:,kmap,[5,7]], p.get_pw("12:20")[:,kmap,[4,6]]]
+        atomic_whts = [p.get_pw(atoms="12:20", spd=8)[:,kmap,:], p.get_pw(atoms="12:20", spd=[5,7])[:,kmap,:], p.get_pw(atoms="12:20", spd=[4,6])[:,kmap,:]]
         np.save('awht.npy', atomic_whts)
 
     if os.path.isfile('sw.npy'):
@@ -88,4 +88,6 @@ if os.path.isfile('WAVECAR'):
                 nseg=num_kpoints, eref=2.0360,
                 ylim=(-6, 3), 
                 kpath_label = ['G', 'Mp', "X", "M/Xp", "G"],
-                factor=20)
+                factor=20,
+                save='ebs_s.png')
+    ax.legend(['', 'Second line'])
