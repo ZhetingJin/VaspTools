@@ -1,3 +1,6 @@
+# 07/18/2022 by Zheting
+# This code is based on VaspBandUnfolding package, installed by 
+# pip install git+https://github.com/QijingZheng/VaspBandUnfolding
 import os
 import numpy as np
 import math
