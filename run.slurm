@@ -36,8 +36,10 @@ touch running
 
 if test -f "CONTCAR"; then
     echo "CONTCAR exists, cp CONTCAR POSCAR"
+    cp POSCAR POSCAR_${SLURM_JOBID}
     cp CONTCAR POSCAR
 fi
+
 module load VASP/5.4.1-iomkl-2018b
 
 exe=`which vasp_std`
