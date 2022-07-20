@@ -11,3 +11,5 @@ awk '{
       else
       print $0
 }' POSCAR > POSCAR-new
+
+cp POSCAR-new POSCAR
