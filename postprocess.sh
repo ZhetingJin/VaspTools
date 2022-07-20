@@ -1,5 +1,5 @@
 #!/bin/sh
-# prepare input files for bandstructure, density of states, fermi surface
+# prepare input files for bandstructure, density of states, fermi surface after SCF
 for i in band dos fs
 do mkdir $i
 cp * $i/
@@ -9,4 +9,4 @@ sed -i "s/IBRION = 2/IBRION = -1/g" $i/INCAR
 sed -i "s/NSW = 99/NSW = 0/g" $i/INCAR
 sed -i "s/LWAVE = False/LWAVE = True/g" $i/INCAR
 done
-
+ 
