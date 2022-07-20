@@ -1,7 +1,7 @@
 #! /usr/bin/env python
 # 06/28/2022 Zheting
 from pymatgen.core import Lattice, Structure, Molecule
-import random
+import random 
 import sys
 import numpy as np
 
