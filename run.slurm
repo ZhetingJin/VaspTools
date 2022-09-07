@@ -18,7 +18,7 @@
 #SBATCH --out="log.-%j"
 #SBATCH --partition scavenge --time=1-00:00:00
 #SBATCH --requeue 
-#SBATCH --nodes=8 --ntasks-per-node=20
+#SBATCH --nodes=20 --ntasks-per-node=8
 #SBATCH --mem=20G
 #SBATCH --export=ALL
 
@@ -42,8 +42,7 @@ fi
 
 module load VASP/5.4.1-iomkl-2018b
 
-exe=`which vasp_std`
-export OMP_NUM_THREADS=1
-mpirun --mca btl_openib_if_include "mlx5_2:1" --mca btl openib,self,vader $exe 
+srun -n 160 vasp_std
+
 rm running
 touch finish
