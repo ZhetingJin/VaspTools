@@ -13,4 +13,4 @@ awk '{
       print $0
 }' POSCAR > POSCAR-new
 
-cp POSCAR-new POSCAR
+cp POSCAR-new POSCAR 
